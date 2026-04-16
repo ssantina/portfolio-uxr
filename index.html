@@ -36,12 +36,19 @@ h1 { font-size: clamp(1.75rem, 6vw, 3rem); font-weight: 700; line-height: 1.1; l
 .header-links a { font-size: 12px; color: var(--text-mid); text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .header-links a:hover { color: var(--teal); }
 
+/* WICD BUTTON */
+.wicd-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1.1rem; padding: 9px 18px; background: var(--teal-dim); border: 1px solid rgba(92,225,230,0.45); border-radius: var(--radius-pill); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 0.02em; cursor: pointer; transition: background 0.2s, border-color 0.2s; opacity: 0; animation: fadeUp 0.5s ease forwards 0.35s; }
+.wicd-btn:hover { background: rgba(92,225,230,0.22); border-color: rgba(92,225,230,0.7); }
+
 /* TABS */
 .tabs { display: flex; border-bottom: 1px solid var(--rule); margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.5s ease forwards 0.5s; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab-btn { padding: 1rem 1.25rem; font-size: 14px; font-weight: 700; letter-spacing: -0.02em; color: var(--text-muted); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; margin-bottom: -1px; font-family: 'Montserrat', sans-serif; white-space: nowrap; flex-shrink: 0; }
 .tab-btn:hover { color: var(--text); }
 .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+.tab-btn.wicd-tab { color: var(--teal); opacity: 0.7; }
+.tab-btn.wicd-tab:hover { opacity: 1; }
+.tab-btn.wicd-tab.active { opacity: 1; border-bottom-color: var(--teal); }
 
 /* BURGER */
 .burger-menu { display: none; margin-bottom: 2rem; position: relative; }
@@ -117,6 +124,34 @@ h1 { font-size: clamp(1.75rem, 6vw, 3rem); font-weight: 700; line-height: 1.1; l
 .a11y-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: var(--radius); background: var(--teal-dim); border: 1px solid rgba(92,225,230,0.3); font-size: 13px; color: var(--text); font-weight: 500; margin-top: 1rem; line-height: 1.5; letter-spacing: -0.01em; }
 .a11y-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
+/* WICD PANEL */
+.wicd-intro { padding: 2rem 0 0.5rem; }
+.wicd-eyebrow { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.wicd-headline { font-size: clamp(1.25rem, 3.5vw, 1.9rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1.2; color: var(--text); margin-bottom: 0.75rem; }
+.wicd-headline span { color: var(--teal); }
+.wicd-sub { font-size: 13px; color: var(--text-mid); font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; }
+.wicd-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; align-items: start; }
+.wicd-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; cursor: pointer; }
+.wicd-card:hover { background: var(--bg-lift); border-color: rgba(242,242,242,0.22); }
+.wicd-card.open { border-color: rgba(92,225,230,0.35); background: var(--bg-lift); }
+.wicd-card.cta { border-color: rgba(92,225,230,0.3); background: var(--teal-dim); cursor: default; }
+.wicd-card.cta:hover { background: rgba(92,225,230,0.18); }
+.wc-head { padding: 1.1rem 1.25rem 0.9rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+.wc-title-wrap { flex: 1; }
+.wc-if { font-size: 10px; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; opacity: 0.8; }
+.wc-title { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.4; }
+.wc-chevron { flex-shrink: 0; transition: transform 0.25s; color: var(--text-muted); margin-top: 3px; }
+.wicd-card.open .wc-chevron { transform: rotate(180deg); }
+.wc-body { display: none; padding: 0 1.25rem 1.1rem; border-top: 1px solid var(--rule-soft); }
+.wicd-card.open .wc-body { display: block; padding-top: 0.9rem; }
+.wc-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.wc-pill { font-size: 11px; padding: 4px 10px; border-radius: var(--radius-pill); background: rgba(92,225,230,0.1); border: 1px solid rgba(92,225,230,0.25); color: var(--text); font-weight: 500; line-height: 1.4; }
+.wc-pill.hi { background: rgba(92,225,230,0.2); border-color: rgba(92,225,230,0.5); color: var(--teal); }
+.cta-inner { padding: 1.25rem; text-align: center; text-decoration: none; display: block; }
+.cta-label { font-size: 10px; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; opacity: 0.85; }
+.cta-title { font-size: 13px; font-weight: 700; color: var(--teal); letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 7px; }
+.cta-addr { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.01em; }
+
 /* FOOTER */
 footer { border-top: 1px solid var(--rule); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
 .footer-name { font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: -0.02em; }
@@ -141,10 +176,14 @@ footer { border-top: 1px solid var(--rule); padding-top: 2rem; display: flex; ju
   .tools-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .track-label { display: none; }
   footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .wicd-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 400px) {
   .tools-grid { grid-template-columns: 1fr; }
   h1 { letter-spacing: -0.04em; }
+}
+@media (min-width: 641px) and (max-width: 860px) {
+  .wicd-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* MOBILE CAROUSEL */
@@ -179,6 +218,10 @@ footer { border-top: 1px solid var(--rule); padding-top: 2rem; display: flex; ju
       <div>
         <h1>santina piazzese<br>spratte</h1>
         <p class="subtitle"><strong style="display:block; font-size:15px; color:var(--teal); font-weight:700; letter-spacing:-0.03em; margin-bottom:0.4rem;">Senior Experience Researcher & Behavioral Strategist</strong>6+ years translating human insight into product direction, service design, and organizational strategy — across enterprise, AI startups, B2C platforms, and consulting work.</p>
+        <button class="wicd-btn" onclick="switchTabFromBtn('wicd')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          ok but what can you actually do?
+        </button>
       </div>
     </div>
     <div class="header-links">
@@ -191,29 +234,31 @@ footer { border-top: 1px solid var(--rule); padding-top: 2rem; display: flex; ju
 
 <!-- DESKTOP TABS -->
 <div class="tabs">
-  <button class="tab-btn active" onclick="switchTab('uxr', this)">UX & behavioral research</button>
+  <button class="tab-btn active" onclick="switchTab('uxr', this)">Portfolio - Selected Cases</button>
   <button class="tab-btn" onclick="switchTab('about', this)">About</button>
   <button class="tab-btn" onclick="switchTab('tools', this)">Tools</button>
+  <button class="tab-btn wicd-tab" id="wicd-tab-btn" onclick="switchTab('wicd', this)">What I can do →</button>
 </div>
 
 <!-- MOBILE BURGER -->
 <div class="burger-menu" id="burgerMenu">
   <p style="font-size:12px; color:var(--text-mid); font-weight:600; letter-spacing:0.05em; text-transform:uppercase; margin-top:0.5rem; margin-bottom:0.5rem;">Explore my portfolio</p>
   <button class="burger-btn" id="burgerBtn" onclick="toggleBurger()">
-    <span id="burgerLabel">UX & behavioral research</span>
+    <span id="burgerLabel">Portfolio - Selected Cases</span>
     <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
   <div class="burger-dropdown" id="burgerDropdown">
-    <button class="burger-item active" onclick="burgerSwitch('uxr', 'UX & behavioral research', this)">UX & behavioral research</button>
+    <button class="burger-item active" onclick="burgerSwitch('uxr', 'Portfolio - Selected Cases', this)">Portfolio - Selected Cases</button>
     <button class="burger-item" onclick="burgerSwitch('about', 'About', this)">About</button>
     <button class="burger-item" onclick="burgerSwitch('tools', 'Tools', this)">Tools</button>
+    <button class="burger-item" onclick="burgerSwitch('wicd', 'What I can do →', this)">What I can do →</button>
   </div>
 </div>
 
 <!-- UXR PANEL -->
 <div class="panel active" id="panel-uxr">
   <div class="track-header">
-    <span class="track-title">UX & behavioral research</span>
+    <span class="track-title">Portfolio - Selected Cases</span>
     <span class="track-rule"></span>
     <span class="track-label">selected work · 2020–present</span>
   </div>
@@ -433,6 +478,187 @@ footer { border-top: 1px solid var(--rule); padding-top: 2rem; display: flex; ju
   </div>
 </div>
 
+<!-- WICD PANEL -->
+<div class="panel" id="panel-wicd">
+  <div class="wicd-intro">
+    <div class="wicd-eyebrow">What I can do</div>
+    <h2 class="wicd-headline">Ok, impressive background —<br>but <span>what can she actually solve?</span></h2>
+    <p class="wicd-sub">Good question. Here's the honest answer. Each card below is a real problem I can walk into and own. Click the ones that sound like yours.</p>
+  </div>
+  <div class="wicd-grid">
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">To understand your users at a deeper level</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill">In-depth qualitative interviews</span>
+          <span class="wc-pill">Narrative & language analysis</span>
+          <span class="wc-pill hi">Behavioral personas</span>
+          <span class="wc-pill">Journey mapping</span>
+          <span class="wc-pill">Usability & accessibility audits</span>
+          <span class="wc-pill hi">The psychology underneath the behavior</span>
+          <span class="wc-pill">Identifying assumptions no one has named</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">Research that changes decisions, not just informs them</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">Strategic "so what" framing</span>
+          <span class="wc-pill">C-suite research presentations</span>
+          <span class="wc-pill">Mixed-methods synthesis</span>
+          <span class="wc-pill">Research roadmaps</span>
+          <span class="wc-pill hi">Connecting insight to product direction</span>
+          <span class="wc-pill">Making findings impossible to ignore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">Behavioral science applied to real problems</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">Behavioral economics frameworks</span>
+          <span class="wc-pill">Cognitive bias identification</span>
+          <span class="wc-pill">Social influence & persuasion</span>
+          <span class="wc-pill hi">Intervention design</span>
+          <span class="wc-pill">Motivation & self-efficacy theory</span>
+          <span class="wc-pill">Academic research → practical recs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">To understand your market and sharpen your positioning</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill">Consumer & market research</span>
+          <span class="wc-pill hi">Audience segmentation</span>
+          <span class="wc-pill">Competitive landscape analysis</span>
+          <span class="wc-pill">Social listening (Pulsar)</span>
+          <span class="wc-pill hi">GTM strategy support</span>
+          <span class="wc-pill">Positioning from behavioral insight</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">Service design & innovation thinking</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">Service blueprints</span>
+          <span class="wc-pill">End-to-end journey mapping</span>
+          <span class="wc-pill">Dual-audience research</span>
+          <span class="wc-pill">MVP testing & validation</span>
+          <span class="wc-pill hi">Behavioral product innovation</span>
+          <span class="wc-pill">Identifying adoption barriers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">To build a research practice from zero</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">ResearchOps from scratch</span>
+          <span class="wc-pill">Methodology & tooling setup</span>
+          <span class="wc-pill">Analytics infrastructure (Amplitude)</span>
+          <span class="wc-pill hi">First researcher experience × 3</span>
+          <span class="wc-pill">Building research credibility internally</span>
+          <span class="wc-pill">Processes before anyone asked</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">A strategic thinking partner with a fresh perspective</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">Workshop facilitation</span>
+          <span class="wc-pill">Reframing the brief</span>
+          <span class="wc-pill">Cross-functional collaboration</span>
+          <span class="wc-pill hi">The question underneath the question</span>
+          <span class="wc-pill">Multiple concurrent workstreams</span>
+          <span class="wc-pill">Comfortable with ambiguity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wicd-card" onclick="toggleWicd(this)">
+      <div class="wc-head">
+        <div class="wc-title-wrap">
+          <div class="wc-if">If you need</div>
+          <div class="wc-title">Seniority, ownership, and real delivery</div>
+        </div>
+        <svg class="wc-chevron" width="13" height="8" viewBox="0 0 13 8" fill="none"><path d="M1 1L6.5 7L12 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="wc-body">
+        <div class="wc-pills">
+          <span class="wc-pill hi">End-to-end project ownership</span>
+          <span class="wc-pill">Client-facing delivery</span>
+          <span class="wc-pill">Stakeholder management</span>
+          <span class="wc-pill">Junior team mentoring</span>
+          <span class="wc-pill hi">No handholding needed</span>
+          <span class="wc-pill">Managing external freelancers</span>
+        </div>
+      </div>
+    </div>
+
+    <a class="wicd-card cta" href="mailto:psi.santina@gmail.com" style="text-decoration:none; display:block;">
+      <div class="cta-inner">
+        <div class="cta-label">Not sure yet?</div>
+        <div class="cta-title">This sounds interesting<br>but I'm not quite sure</div>
+        <div class="cta-addr">psi.santina@gmail.com →</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
 <footer>
   <span class="footer-name">Santina Piazzese Spratte</span>
   <div class="footer-links">
@@ -450,6 +676,16 @@ function switchTab(tab, btn) {
   document.getElementById('panel-' + tab).classList.add('active');
   btn.classList.add('active');
   setTimeout(initCarousels, 50);
+}
+
+function switchTabFromBtn(tab) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.burger-item').forEach(i => i.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  const tabBtn = document.getElementById('wicd-tab-btn');
+  if (tabBtn) tabBtn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleBurger() {
@@ -488,6 +724,11 @@ function toggleCard(btn) {
       n.textContent = isOpen ? ' read more' : ' read less';
     }
   }
+}
+
+function toggleWicd(card) {
+  if (card.classList.contains('cta')) return;
+  card.classList.toggle('open');
 }
 
 function initCarousels() {
