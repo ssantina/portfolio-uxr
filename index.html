@@ -681,6 +681,10 @@ function switchTabFromBtn(tab) {
   document.getElementById('panel-' + tab).classList.add('active');
   const tabBtn = document.getElementById('wicd-tab-btn');
   if (tabBtn) tabBtn.classList.add('active');
+  const burgerLabel = document.getElementById('burgerLabel');
+  if (burgerLabel) burgerLabel.textContent = 'What I can do →';
+  const wicdBurgerItem = document.querySelector('.burger-item:last-child');
+  if (wicdBurgerItem) wicdBurgerItem.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
